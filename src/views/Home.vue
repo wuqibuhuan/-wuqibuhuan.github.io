@@ -3,7 +3,7 @@
     <!-- 面包屑 -->
     <a-breadcrumb style="margin: 16px 16px; font-size: 16px; padding: 8px">
       <a-breadcrumb-item>
-        <router-link to="/">首页</router-link>
+        <router-link to="/Main">首页</router-link>
       </a-breadcrumb-item>
       <!-- <a-breadcrumb-item></a-breadcrumb-item> -->
     </a-breadcrumb>

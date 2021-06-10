@@ -4,6 +4,7 @@ import router from './router'
 import store from './store'
 // 引入全局样式
 import   '../src/assets/css/gobalCss.css'
+// import  '../src/assets/css/font.css'
 // 引入ui组件库
 import 'ant-design-vue/dist/antd.css';
 import Antd from 'ant-design-vue'
