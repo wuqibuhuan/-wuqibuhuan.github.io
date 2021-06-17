@@ -10,24 +10,29 @@
           />
           <span>{{ collapsed ? "" : "Cicci" }}</span>
         </div>
-        <a-menu theme="dark" :default-selected-keys="['1']" mode="inline">
-          <a-menu-item key="1">
+        <a-menu
+          theme="dark"
+          :default-selected-keys="selectedKeys"
+          :defaultOpenKeys="OpenKeys"
+          mode="inline"
+        >
+          <a-menu-item key="/Home">
             <router-link to="/Home" tag="div">
               <a-icon type="pie-chart" />
               <span>首页</span>
             </router-link>
           </a-menu-item>
-          <a-menu-item key="2">
+          <a-menu-item key="/personage">
             <router-link to="/personage" tag="div">
               <a-icon type="desktop" />
               <span>个人中心</span></router-link
             >
           </a-menu-item>
-          <a-sub-menu key="sub1">
+          <a-sub-menu key="后台管理">
             <span slot="title"
               ><a-icon type="user" /><span>后台管理</span></span
             >
-            <a-menu-item key="3">
+            <a-menu-item key="/jurisdiction">
               <router-link to="/jurisdiction" tag="div">
                 <a-icon type="contacts" />
                 <span>权限管理</span></router-link
@@ -91,7 +96,16 @@ export default {
   data() {
     return {
       collapsed: false,
+      selectedKeys: [],
+      OpenKeys: [],
     };
+  },
+  created() {
+    if (this.$route.meta && this.$route.meta.moudle) {
+      this.OpenKeys = [this.$route.meta.moudle];
+    }
+    console.log(this.$route.meta);
+    this.selectedKeys = [this.$route.path];
   },
   methods: {
     handleButtonClick(e) {

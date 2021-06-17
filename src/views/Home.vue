@@ -11,19 +11,11 @@
     <button @click="gotoRegisterPage">到register页面</button>
     <button @click="loading">测试loading</button>
     <loading v-show="isLoading" /> -->
-    <a-upload>
-      <a-button> <a-icon type="upload" /> Click to Upload </a-button>
-    </a-upload>
-    <a-card hoverable style="width: 240px">
-      <img
-        slot="cover"
-        alt="example"
-        src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
-      />
-      <a-card-meta title="Europe Street beat">
-        <template slot="description"> www.instagram.com </template>
-      </a-card-meta>
-    </a-card>
+    <ul>
+      <li v-for="(item, index) in datalist" :key="index" v-html="item.title">
+        <router-link to=""> {{ item.title }}</router-link>
+      </li>
+    </ul>
   </div>
 </template>
 <script>
@@ -31,9 +23,15 @@ export default {
   data() {
     return {
       username: "Cicci",
+      datalist: [],
     };
   },
   components: {},
+  async created() {
+    const { data: res } = await this.$http.get("/topics");
+    console.log(res);
+    this.datalist = res.data;
+  },
   computed: {},
   beforeMount() {},
   mounted() {},
@@ -54,6 +52,7 @@ export default {
     loading() {
       this.$store.commit("showLoading", true);
     },
+    conso() {},
   },
 
   watch: {},

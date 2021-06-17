@@ -38,7 +38,9 @@
                   />
                 </div>
                 <button class="btn submit" @click="login">登 录</button>
-                <a href="#" class="bottom-text-w3ls">忘记密码?</a>
+                <a href="#" class="bottom-text-w3ls" @click="Forgetpassword"
+                  >忘记密码?</a
+                >
               </div>
             </article>
           </div>
@@ -81,7 +83,9 @@
                     required
                   />
                 </div>
-                <button type="submit" class="btn submit">注 册</button>
+                <button type="submit" class="btn submit" @click="register">
+                  注 册
+                </button>
               </div>
             </article>
           </div>
@@ -110,7 +114,13 @@
                     required
                   />
                 </div>
-                <button type="submit" class="btn submit last-btn">提交</button>
+                <button
+                  type="submit"
+                  class="btn submit last-btn"
+                  @click="register"
+                >
+                  提交
+                </button>
               </div>
             </article>
           </div>
@@ -121,8 +131,8 @@
       <!-- copyright -->
       <div class="copyright">
         <h2>
-          Copyright &copy; 2019 - {{ nowYear }} 版权所有| by
-          <a href="#">ChanKwongwing</a>
+          Copyright &copy; 2019 - {{ nowYear }} 版权所有|
+          <a href="#">Cicci个人demo网站</a>
         </h2>
       </div>
       <!-- //copyright -->
@@ -154,7 +164,7 @@ export default {
   mounted() {},
   methods: {
     login() {
-      this.$message.success("登录成功", 3);
+      this.$message.success("登录成功");
       this.$router.push({
         path: "/Home",
         // 编程跳转时  需要携带的参数
@@ -162,6 +172,12 @@ export default {
         //   flag: 2,
         // },
       });
+    },
+    Forgetpassword() {
+      this.$message.error("没有写哦！");
+    },
+    register() {
+      this.$message.error("没有写哦！");
     },
   },
   watch: {},
@@ -523,7 +539,7 @@ label.icon-left-w3pvt span {
 /* form style */
 #form {
   background: #ffff;
-  padding: 2em;
+  padding: 2.38em;
 }
 
 .legend {

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div
+      class="conter"
+      style="width: 900p; height:600px;background: rgb(10, 22, 114); position: relative;"
+    >
+      <div
+        style="width: 400px; height:300px;background: violet;  position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%);"
+      ></div>
+      <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+    </div>
+    <script>
+      var str = "",
+        arr = "";
+      for (i = 1; i <= 9; i++) {
+        for (j = 1; j <= i; j++) {
+          str += i + "×" + j + "=" + i * j + "\t";
+        }
+        str += "\n";
+      }
+      for (i = 1; i <= 10; i++) {
+        for (j = i; j <= 10; j++) {
+          arr += "※";
+        }
+        arr += "\n";
+      }
+      console.log(str);
+      console.log(arr);
+      var app = [3, 2, 1, 1, 4, 9, 120, 48, 78];
+      function sortatty(a, b) {
+        return a - b;
+      }
+      app.sort(sortatty);
+      console.log(app);
+
+      var nub = "";
+      for (let i = 0; i <= 10; i++) {
+        nub += i;
+      }
+      console.log(nub);
+      const arr1 = ["zs", "ls", "w5", "xl"];
+      let pp = "zdq";
+      arr1.push(pp);
+      let t = arr1.map((item) => {
+        return item;
+      });
+      console.log(arr1);
+      console.log(t);
+
+      var data = [
+        { "2018-04": 0 },
+        { "2018-03": 1 },
+        { "2018-02": 0 },
+        { "2018-01": 0 },
+        { "2017-12": 0 },
+        { "2017-11": 0 },
+        { "2017-10": 0 },
+        { "2017-09": 0 },
+        { "2017-08": 0 },
+        { "2017-07": 0 },
+        { "2017-06": 0 },
+        { "2017-05": 0 },
+      ];
+      var datakey = []; //存放key
+      var datavalue = []; //存放value
+      for (var i = 1; i <= data.length; i++) {
+        //便历每一条数据
+        for (var key in data[i]) {
+          datakey.push(key);
+          datavalue.push(data[i][key]);
+        }
+      }
+      console.log(datakey); //所有的key
+      console.log(datavalue); //所有的value
+
+      datakey.forEach((element) => {
+        console.log(element);
+      });
+      for (let index = 0; index < datakey.length; index++) {
+        const element = datakey[index];
+        // console.log(element);
+
+        // items.innerHtml = element; //为当前li赋值
+      }
+      var items = document.getElementsByTagName("li"); //获取li集合
+      for (var i = 0; i < items.length; i++) {
+        items[i].innerHTML = datakey[i];
+      }
+
+      var strDay = "今天是星期" + "日一二三四五六".charAt(new Date().getDay());
+      console.log(strDay);
+
+      var Day = new Date().getDay();
+      var data = "今天是星期";
+      switch (Day) {
+        case 1:
+          data += Day;
+          break;
+        case 2:
+          data += "二";
+          break;
+        case 3:
+          data += Day;
+          break;
+        case 4:
+          data += Day;
+          break;
+        case 5:
+          data += Day;
+          break;
+        case 6:
+          data += Day;
+          break;
+        case 7:
+          data += Day;
+          break;
+      }
+      console.log(data);
+
+      let srt = "沈腾";
+      let out = `${srt}是我最喜欢的演员`;
+      console.log(out);
+
+      let arrpp = ["E", "G", "M"];
+      const oo = [...arrpp];
+      console.log(oo);
+      const uu = [...arrpp, ...oo];
+      console.log(uu);
+
+      let name = "爷最美";
+      let change = function() {
+        console.log("爷是你得不到的");
+      };
+      const school = {
+        name,
+        change,
+      };
+      console.log(school);
+      let Arrconst = "",
+        zdq = "";
+      for (i = 1; i <= 10; i++) {
+        for (j = 0; j < i; j++) {
+          Arrconst += "*";
+        }
+        Arrconst += "\n";
+      }
+      console.log(Arrconst);
+      for (var i = 1; i <= 10; i++) {
+        //外层循环代表的是要循环的行数
+
+        for (var k = 0; k < 10 - i; k++) {
+          //这层循环代表的是要循环的空格数
+
+          document.write("&nbsp&nbsp ");
+        }
+
+        for (var j = 0; j < i; j++) {
+          //内层循环代表的是要打印的列数
+
+          document.write("*&nbsp&nbsp&nbsp&nbsp&nbsp");
+        }
+
+        document.write("<br>");
+      }
+    </script>
+  </body>
+</html>
